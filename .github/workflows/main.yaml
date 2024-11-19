@@ -4,12 +4,22 @@ on:
   pull_request_target:
     branches:
       - main
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - edited
+      - ready_for_review
+      - unlabeled
+      - labeled
+      - unlocked
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout repository codeeeleandautpo
+      # Step 1: Checkout repository code
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
